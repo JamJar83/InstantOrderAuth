@@ -6,7 +6,7 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
 // using nodejs
-// node v12
+// node v12 - old version no longer in support. We need to update to version 18
 
 var User = require('../models/user');
 
