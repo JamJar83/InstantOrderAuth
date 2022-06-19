@@ -20,6 +20,10 @@ router.get('/login', function(req, res, next) {
   res.render('login', {title:'Login'});
 });
 
+// test user login
+// username: testuser@hackednz.com
+// password: IAmTheEldenLord
+
 router.post('/login',
   passport.authenticate('local',{failureRedirect:'/users/login', failureFlash: 'Invalid username or password'}),
   function(req, res) {
