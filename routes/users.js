@@ -5,16 +5,10 @@ var upload = multer({dest: './uploads'});
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 
+// using nodejs
+// node v12
+
 var User = require('../models/user');
-
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
-
-router.get('/register', function(req, res, next) {
-  res.render('register',{title:'Register'});
-});
 
 router.get('/login', function(req, res, next) {
   res.render('login', {title:'Login'});
@@ -23,6 +17,8 @@ router.get('/login', function(req, res, next) {
 // test user login
 // username: testuser@hackednz.com
 // password: IAmTheEldenLord
+
+// test user is fully priveleged account. Need to remember to revoke after testing finished
 
 router.post('/login',
   passport.authenticate('local',{failureRedirect:'/users/login', failureFlash: 'Invalid username or password'}),
